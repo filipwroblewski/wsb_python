@@ -17,7 +17,7 @@ pobieranie danych
 z klawiatury
 '''
 x=2
-y=3
+y=3 
 result=x^y # XOR ^ (te same wartosci -> 0; 2 inne wartosci -> 1)
 print(result)
 
