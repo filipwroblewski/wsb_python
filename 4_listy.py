@@ -59,20 +59,28 @@ Wyświetl zawartość listy po wykonaniu operacji przez użytkownika.
 country = ['Polska', 'Włochy', 'Hiszpania', 'Grecja', 'Norwegia']
 newName1 = input('Wprowadź nazwę kraju: ')
 newName2 = input('Wprowadź nazwę kraju: ')
-country.append(newName1)
-country.append(newName2)
-print(f'pierwsze 3 elementy listy: {country[:3]}')
-print(f'elementy listy, które dodałem: {country[-2:]}')
-opcja = input('\n4) Wyczyść zawartość listy\n5) Znajdź element w liście, który poda użytkownik(wyświetl czy jest dodany do listy)\nUżytkownik raz dokonuje wyboru z listy.\nopcja: ')
-opcja = int(opcja)
+addedElems = [newName1, newName2]
+country.extend(addedElems)
 
-if opcja == 4:
-    print(f'Wyświetl zawartość listy: {country.clear()}')
-elif opcja == 5:
-    indexOfElem = int(input('Index elementu z listy do sprawdzenia: '))
-    if indexOfElem <= len(country):
-        print(
-            f'Element nr {indexOfElem} jest dodany do listy ({country[indexOfElem]})')
-    else:
-        print('Nie ma podanego elementu w liście')
+menu = '1) Wyświetl pierwsze 3 elementy listy\n2) Wyświetl elementy listy, które dodałem (dane pobierz z listy)\n3) Wyświetl zawartość listy\n4) Wyczyść zawartość listy\n5) Znajdź element w liście, który poda użytkownik\nq) Zakończenie działania\n\nWybor: '
+option = ''
+while option != 'q':
+    option = input(menu)
+    if option == '1':
+        print(f'pierwsze 3 elementy listy: {country[:3]}')
+    elif option == '2':
+        print(f'elementy listy, które dodałem: {addedElems}')
+    elif option == '3':
+        print(f'Wyświetl zawartość listy: {country}')
+    elif option == '4':
+        print(f'Wyświetl zawartość listy: {country.clear()}')
+    elif option == '5':
+        indexOfElem = int(input('Index elementu z listy do sprawdzenia: '))
+        if indexOfElem <= len(country):
+            print(
+                f'Element nr {indexOfElem} jest dodany do listy ({country[indexOfElem]})')
+        else:
+            print('Nie ma podanego elementu w liście')
+    elif option == 'q':
+        break
 print(f'Wyświetl zawartość listy: {country}')
