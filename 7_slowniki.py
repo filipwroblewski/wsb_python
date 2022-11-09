@@ -45,14 +45,13 @@ utworz program totolotek
 uzytkownik podaje 6 liczb
 '''
 
-print('----- Totolotek -----')
-all_nums = list(range(1, 50))  # liczy od 1 do 49
+print('\n\n----- Totolotek -----')
+all_nums = list(range(1, 50))  # liczby od 1 do 49
 chosen_nums = []
-for i in range(6):
-    num = int(input(f'Podaj liczbe ({i}/6): '))
-    if i in chosen_nums:
+while len(chosen_nums) < 6:
+    num = int(input(f'Podaj liczbe ({len(chosen_nums)+1}/6): '))
+    if num in chosen_nums:
         print(f'Ta liczba znajduje sie juz w Twoich numerach!\n{chosen_nums}')
-        i -= 1
     else:
         chosen_nums.append(num)
 
@@ -60,9 +59,9 @@ print('= --- =')
 winning_num = random.choice(all_nums)
 print(f'Wygraywajacy nr to: {winning_num}')
 print('= --- =')
+print(f'Twoje numery to: {chosen_nums}')
 
 if winning_num in chosen_nums:
     print('Brawo! Wygrałeś!')
 else:
-    print(f'Nie udalo sie. Spróbuj ponownie!')
-print(f'Twoje numery to: {chosen_nums}')
+    print(f'Nie udało Ci się wygrać.')
