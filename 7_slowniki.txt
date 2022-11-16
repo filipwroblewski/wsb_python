@@ -37,16 +37,7 @@ if key in worker:
 else:
     print(f'klucz {key} nie zostal usuniety!')
 print(worker)
-print(worker.values())
-print(worker.items())
 
-print('for value in worker.values()')
-for value in worker.values():
-    print(value, end=' ')
-
-print('for value in worker.values()')
-for key, value in worker.items():
-    print(f'{key}: {value}')
 # dokonczyc slowniki
 
 '''
